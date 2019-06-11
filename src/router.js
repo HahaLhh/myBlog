@@ -1,26 +1,37 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
+// import Home from "./views/Home.vue";
+import AddBlog from "./components/AddBlog"
+import ShowBlogs from "./components/ShowBlogs"
+import SingleBlog from "./components/SingleBlog"
+import EditBlog from "./components/EditBlog"
 
 Vue.use(Router);
 
+//配置路由
 export default new Router({
-  mode: "history",
+  mode: "history",  //去除''#'' 
   base: process.env.BASE_URL,
   routes: [
     {
       path: "/",
-      name: "home",
-      component: Home
+      name: "ShowBlogs",
+      component: ShowBlogs
     },
     {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+      path: "/AddBlog",
+      name: "AddBlog",
+      component: AddBlog
+    },
+    {
+      path: "/blog/:id",
+      name: "single-blog",
+      component: SingleBlog
+    },
+    {
+      path: "/edit/:id",
+      name: "edit-AddBlog",
+      component: EditBlog
     }
   ]
 });
