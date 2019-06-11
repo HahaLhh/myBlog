@@ -10,7 +10,7 @@ Vue.use(Router);
 
 //配置路由
 export default new Router({
-  mode: "history",  //去除''#'' 
+  // mode: "history",  //去除''#''  解决打包后routerview不显示问题
   base: process.env.BASE_URL,
   routes: [
     {
