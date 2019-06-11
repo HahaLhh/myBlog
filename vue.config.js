@@ -1,6 +1,7 @@
 // vue.config.js
 module.exports = {
-  baseUrl: '/',   //根路径
+//  baseUrl: './',   //根路径
+  publicPath: './',
   outputDir: 'dist', // 打包的目录 构建输出目录
   assetsDir: 'assets',//静态资源目录(js.css.img.fonts)
   lintOnSave: true, // 在保存时校验格式 是否开启eslint保存检测 true false error
